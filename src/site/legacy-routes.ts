@@ -1,0 +1,16 @@
+export const legacyRedirects = [
+  { source: '/index.html', destination: '/' },
+  { source: '/keunggulan.html', destination: '/keunggulan' },
+  { source: '/pricing.html', destination: '/pricing' },
+  { source: '/kontak.html', destination: '/kontak' },
+  { source: '/artikel.html', destination: '/artikel' },
+  { source: '/kebijakan-privasi.html', destination: '/kebijakan-privasi' },
+  { source: '/syarat-ketentuan.html', destination: '/syarat-ketentuan' },
+  { source: '/artikel-branding-umkm.html', destination: '/artikel/branding-umkm' },
+  { source: '/artikel-google-business-profile.html', destination: '/artikel/google-business-profile' },
+  { source: '/artikel-kecepatan-website.html', destination: '/artikel/kecepatan-website' },
+  { source: '/artikel-kenapa-umkm-harus-punya-website.html', destination: '/artikel/kenapa-umkm-harus-punya-website' },
+  { source: '/artikel-seo-dasar-untuk-pemula.html', destination: '/artikel/seo-dasar-untuk-pemula' },
+  { source: '/artikel-strategi-digital-marketing-umkm.html', destination: '/artikel/strategi-digital-marketing-umkm' },
+  { source: '/artikel-website-responsif-mobile-first.html', destination: '/artikel/website-responsif-mobile-first' },
+] as const;
