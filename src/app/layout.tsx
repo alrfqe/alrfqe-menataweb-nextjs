@@ -13,7 +13,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: `Jasa Pembuatan Website Profesional untuk UMKM | ${siteConfig.name}`,
+  title: 'Menataweb - Next Level Digital Experience & Development Agency',
   description: siteConfig.description,
   keywords: 'jasa pembuatan website, website UMKM, jasa website profesional, website company profile, landing page bisnis, jasa website Indonesia, Menata Web',
   authors: [{ name: siteConfig.name }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: `${siteConfig.url}/`,
-    title: `Jasa Pembuatan Website Profesional untuk UMKM | ${siteConfig.name}`,
+    title: 'Menataweb - Next Level Digital Experience & Development Agency',
     description: siteConfig.ogDescription,
     images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
     siteName: siteConfig.name,
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `Jasa Pembuatan Website Profesional untuk UMKM | ${siteConfig.name}`,
+    title: 'Menataweb - Next Level Digital Experience & Development Agency',
     description: siteConfig.ogDescription,
     images: [siteConfig.ogImage],
   },
