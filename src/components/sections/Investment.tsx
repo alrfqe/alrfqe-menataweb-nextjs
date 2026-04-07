@@ -16,7 +16,7 @@ export default function Investment() {
         <div className={`investment-banner fade-up${vis ? ' visible' : ''}`}>
           <div className="investment-content">
             <div className="section-label">{t('Investasi Terjangkau','Affordable Investment')}</div>
-            <h2 className="text-h2">{t('Cukup ','Just ')}<span className="text-gradient">Rp 750.000</span>{t(' untuk Memulai Bisnis Online Anda',' to Start Your Online Business')}</h2>
+            <h2 className="text-h2">{t('Cukup ','Just ')}<span className="text-gradient">Rp 1.000.000</span>{t(' untuk Memulai Bisnis Online Anda',' to Start Your Online Business')}</h2>
             <p className="investment-desc">{t('Anda sudah selangkah lebih maju dari kompetitor. Website profesional yang siap konversi pengunjung jadi pelanggan — tanpa biaya tersembunyi, tanpa ribet.','You\'re already one step ahead of competitors. A professional website ready to convert visitors into customers — no hidden fees, no hassle.')}</p>
             <div className="investment-features">
               {features.map((f, i) => (
@@ -29,7 +29,7 @@ export default function Investment() {
             <div className="investment-visual">
               <div className="investment-price-tag">
                 <span className="price-tag-label">{t('Mulai dari','Starting from')}</span>
-                <span className="price-tag-amount">Rp 750k</span>
+                <span className="price-tag-amount">Rp 1jt</span>
                 <span className="price-tag-note">{t('• tanpa biaya tersembunyi','• no hidden fees')}</span>
               </div>
             </div>
