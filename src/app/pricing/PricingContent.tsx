@@ -43,7 +43,10 @@ export default function PricingContent({ packages }: { packages: PricingPackage[
                 {pkg.featured && <span className="card-badge">POPULAR</span>}
                 <span className="card-number">{pkg.num}</span>
                 <h3 className="card-title">{pkg.name}</h3>
-                <div className="card-price">{pkg.price}</div>
+                <div className="card-price">
+                  {pkg.price}
+                  {pkg.originalPrice && <span className="card-original-price">{pkg.originalPrice}</span>}
+                </div>
                 <span className="card-price-fix">{pkg.priceFix ? t('Harga Fix', 'Fixed Price') : 'Custom Scope'}</span>
                 <p className="card-desc">{t(pkg.desc.id, pkg.desc.en)}</p>
                 <ul className="card-features">

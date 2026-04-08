@@ -3157,6 +3157,17 @@ a {
     font-weight: 800;
     color: var(--color-primary);
     margin-bottom: 0.25rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.card-original-price {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: line-through;
 }
 
 .card-price-fix {

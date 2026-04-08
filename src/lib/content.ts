@@ -37,6 +37,7 @@ type CmsPricingRecord = {
   order?: number;
   name?: string;
   price?: string;
+  originalPrice?: string;
   priceFix?: boolean;
   featured?: boolean;
   description?: LocalizedText;
@@ -120,6 +121,7 @@ function normalizePricing(record: CmsPricingRecord, index: number): PricingPacka
     num,
     name: normalizedName,
     price: record.price,
+    originalPrice: record.originalPrice,
     priceFix: record.priceFix ?? true,
     desc: record.description,
     featured: Boolean(record.featured),

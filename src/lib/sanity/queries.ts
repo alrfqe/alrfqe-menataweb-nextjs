@@ -36,6 +36,7 @@ export const pricingPackagesQuery = groq`
     order,
     name,
     price,
+    originalPrice,
     priceFix,
     featured,
     description,

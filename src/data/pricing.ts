@@ -4,6 +4,7 @@ export type PricingPackage = {
   num: string;
   name: string;
   price: string;
+  originalPrice?: string;
   priceFix: boolean;
   desc: LocalizedText;
   featured: boolean;
