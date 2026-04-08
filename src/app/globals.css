@@ -3915,6 +3915,117 @@ a {
     transform: translate(1px, -1px);
 }
 
+/* Portfolio CTA row */
+.portfolio-cta-row {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+/* Portfolio category badge (overlay on image) */
+.portfolio-category-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.3rem 0.65rem;
+    border-radius: 99px;
+    backdrop-filter: blur(6px);
+}
+
+.portfolio-category-badge--website {
+    background: rgba(24, 33, 245, 0.85);
+    color: #fff;
+}
+
+.portfolio-category-badge--desain {
+    background: rgba(124, 58, 237, 0.85);
+    color: #fff;
+}
+
+/* Design card — taller aspect ratio */
+.portfolio-card--desain .portfolio-preview {
+    aspect-ratio: 4 / 3;
+}
+
+/* Client label */
+.portfolio-client {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* ==========================================================================
+   PORTFOLIO FILTER TABS
+   ========================================================================== */
+.portfolio-filter-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+
+.portfolio-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.25rem;
+    border-radius: 99px;
+    border: 1.5px solid var(--color-border);
+    background: var(--color-bg-primary);
+    color: var(--color-text-muted);
+    font-size: var(--text-small);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.portfolio-filter-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.portfolio-filter-btn.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+    font-weight: 600;
+}
+
+.portfolio-filter-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    border-radius: 99px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.08);
+    color: inherit;
+}
+
+.portfolio-filter-btn.active .portfolio-filter-count {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Empty state */
+.portfolio-empty {
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--color-text-muted);
+    font-size: var(--text-small);
+}
+
 /* ==========================================================================
    6. PROCESS
    ========================================================================== */

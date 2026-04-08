@@ -8,10 +8,11 @@ import {
 } from '@/data/articles';
 import { articleContentBySlug, articleContentEnBySlug } from '@/data/article-content';
 import { pricingPackages, type PricingPackage } from '@/data/pricing';
+import { portfolioItems, type PortfolioItem, type PortfolioCategory } from '@/data/portfolio';
 import { productSolutions, type ProductImage, type ProductSolution, type ProductVisual } from '@/data/products';
 import { sanityFetch } from '@/lib/sanity/client';
 import { isSanityConfigured } from '@/lib/sanity/env';
-import { articleDetailBySlugQuery, articleListQuery, pricingPackagesQuery, productSolutionsQuery } from '@/lib/sanity/queries';
+import { articleDetailBySlugQuery, articleListQuery, pricingPackagesQuery, portfolioItemsQuery, productSolutionsQuery } from '@/lib/sanity/queries';
 import type { PortableTextBlock } from '@portabletext/types';
 
 type CategorySlug = ArticleSummary['category']['slug'];
@@ -43,6 +44,18 @@ type CmsPricingRecord = {
   description?: LocalizedText;
   features?: Array<LocalizedText | null>;
   whatsappUrl?: string;
+};
+
+type CmsPortfolioRecord = {
+  order?: number;
+  featured?: boolean;
+  title?: string;
+  category?: string;
+  client?: string;
+  image?: { url: string; alt?: string } | null;
+  description?: LocalizedText;
+  impact?: LocalizedText;
+  url?: string;
 };
 
 type CmsProductRecord = {
@@ -209,6 +222,34 @@ export async function getPricingPackages() {
     return normalized.length > 0 ? normalized : pricingPackages;
   } catch {
     return pricingPackages;
+  }
+}
+
+function normalizePortfolioItem(record: CmsPortfolioRecord, index: number): PortfolioItem | null {
+  if (!record.title || !record.category || !record.image?.url) return null;
+  return {
+    id: `cms-${index}`,
+    order: record.order ?? index + 1,
+    featured: Boolean(record.featured),
+    title: record.title,
+    category: record.category as PortfolioCategory,
+    client: record.client,
+    image: record.image.url,
+    imageAlt: record.image.alt,
+    description: record.description,
+    impact: record.impact,
+    url: record.url,
+  };
+}
+
+export async function getPortfolioItems(): Promise<PortfolioItem[]> {
+  if (!isSanityConfigured()) return portfolioItems;
+  try {
+    const cmsItems = await sanityFetch<CmsPortfolioRecord[]>(portfolioItemsQuery);
+    const normalized = (cmsItems ?? []).map(normalizePortfolioItem).filter(Boolean) as PortfolioItem[];
+    return normalized.length > 0 ? normalized : portfolioItems;
+  } catch {
+    return portfolioItems;
   }
 }
 

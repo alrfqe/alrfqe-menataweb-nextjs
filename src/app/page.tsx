@@ -13,7 +13,7 @@ import ArticlePreview from '@/components/sections/ArticlePreview';
 import FinalCTA from '@/components/sections/FinalCTA';
 import Script from 'next/script';
 import { siteConfig } from '@/site/config';
-import { getHomeArticles } from '@/lib/content';
+import { getHomeArticles, getPortfolioItems } from '@/lib/content';
 
 export const dynamic = 'force-dynamic';
 
@@ -44,7 +44,10 @@ const jsonLd = {
 };
 
 export default async function Home() {
-  const homeArticles = await getHomeArticles();
+  const [homeArticles, portfolioData] = await Promise.all([
+    getHomeArticles(),
+    getPortfolioItems(),
+  ]);
 
   return (
     <>
@@ -55,7 +58,7 @@ export default async function Home() {
       <Problems />
       <Solutions />
       <Services />
-      <Portfolio />
+      <Portfolio items={portfolioData} />
       <Investment />
       <Process />
       <Testimonials />

@@ -45,6 +45,26 @@ export const pricingPackagesQuery = groq`
   }
 `;
 
+export const portfolioItemsQuery = groq`
+  *[_type == "portfolioItem"] | order(order asc, _createdAt asc) {
+    order,
+    featured,
+    title,
+    category,
+    client,
+    "image": select(
+      defined(image.asset) => {
+        "url": image.asset->url,
+        "alt": image.alt
+      },
+      null
+    ),
+    description,
+    impact,
+    url
+  }
+`;
+
 export const productSolutionsQuery = groq`
   *[_type == "productSolution" && defined(slug.current)] | order(order asc, _createdAt asc) {
     order,

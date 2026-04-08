@@ -4,6 +4,7 @@ import { localizedPortableTextType } from './schemas/localizedPortableText';
 import { localizedStringType } from './schemas/localizedString';
 import { localizedTextType } from './schemas/localizedText';
 import { pricingPackageType } from './schemas/pricingPackage';
+import { portfolioItemType } from './schemas/portfolioItem';
 import { productSolutionType } from './schemas/productSolution';
 
 export const schemaTypes: SchemaTypeDefinition[] = [
@@ -12,5 +13,6 @@ export const schemaTypes: SchemaTypeDefinition[] = [
   localizedPortableTextType,
   articleType,
   pricingPackageType,
+  portfolioItemType,
   productSolutionType,
 ];
