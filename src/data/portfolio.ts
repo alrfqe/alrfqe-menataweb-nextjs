@@ -1,10 +1,36 @@
-export type PortfolioCategory = 'website' | 'desain';
+export type PortfolioType = 'portfolio' | 'desain';
+
+export type PortfolioCategory =
+  | 'corporate'
+  | 'wisata'
+  | 'travel'
+  | 'hospitality'
+  | 'fnb'
+  | 'retail'
+  | 'properti'
+  | 'pendidikan'
+  | 'kesehatan'
+  | 'other';
+
+export const categoryLabels: Record<string, { id: string; en: string }> = {
+  corporate:   { id: 'Corporate',         en: 'Corporate'       },
+  wisata:      { id: 'Wisata',            en: 'Tourism'         },
+  travel:      { id: 'Travel',            en: 'Travel'          },
+  hospitality: { id: 'Hospitality',       en: 'Hospitality'     },
+  fnb:         { id: 'F&B',              en: 'F&B'             },
+  retail:      { id: 'Retail',            en: 'Retail'          },
+  properti:    { id: 'Properti',          en: 'Property'        },
+  pendidikan:  { id: 'Pendidikan',        en: 'Education'       },
+  kesehatan:   { id: 'Kesehatan',         en: 'Healthcare'      },
+  other:       { id: 'Lainnya',           en: 'Other'           },
+};
 
 export type PortfolioItem = {
   id: string;
   order: number;
+  type: PortfolioType;
+  category: string;
   title: string;
-  category: PortfolioCategory;
   client?: string;
   image: string;
   imageAlt?: string;
@@ -18,8 +44,9 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: 'kawidasri',
     order: 1,
+    type: 'portfolio',
+    category: 'wisata',
     title: 'Desa Wisata Kawidasri',
-    category: 'website',
     client: 'Desa Wisata Kawidasri',
     image: '/assets/images/portfolio_kawidasri.png',
     imageAlt: 'Website Desa Wisata Kawidasri',
@@ -30,8 +57,9 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: 'clavin',
     order: 2,
+    type: 'portfolio',
+    category: 'corporate',
     title: 'Clavin Jaya Abadi',
-    category: 'website',
     client: 'Clavin Jaya Abadi',
     image: '/assets/images/portfolio_clavin.png',
     imageAlt: 'Website Clavin Jaya Abadi',
@@ -42,8 +70,9 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: 'armada',
     order: 3,
+    type: 'portfolio',
+    category: 'travel',
     title: 'Armada Antar Lintas Nusa',
-    category: 'website',
     client: 'Armada Antar Lintas Nusa',
     image: '/assets/images/portfolio_armada.png',
     imageAlt: 'Website Armada Antar Lintas Nusa',

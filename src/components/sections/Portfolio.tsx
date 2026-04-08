@@ -13,8 +13,9 @@ export default function Portfolio({ items = [] }: PortfolioProps) {
   const { t } = useLang();
   const [ref, vis] = useFadeUp<HTMLElement>();
 
-  const featured = items.filter((p) => p.featured).slice(0, 3);
-  const display = featured.length > 0 ? featured : items.slice(0, 3);
+  const realWork = items.filter((p) => p.type === 'portfolio');
+  const featured = realWork.filter((p) => p.featured).slice(0, 3);
+  const display = featured.length > 0 ? featured : realWork.slice(0, 3);
 
   return (
     <section className="section section-alt" id="portfolio" ref={ref}>

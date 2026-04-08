@@ -49,6 +49,7 @@ export const portfolioItemsQuery = groq`
   *[_type == "portfolioItem"] | order(order asc, _createdAt asc) {
     order,
     featured,
+    type,
     title,
     category,
     client,

@@ -3921,6 +3921,162 @@ a {
     margin-top: 2.5rem;
 }
 
+/* ==========================================================================
+   PORTFOLIO PAGE — TWO SECTION LAYOUT
+   ========================================================================== */
+.pf-page-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Section block (Portfolio Klien / Inspirasi Desain) */
+.pf-section {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1.5px solid var(--color-border);
+}
+
+.pf-section:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.pf-section--desain {
+    background: var(--color-bg-secondary);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1.5px solid var(--color-border);
+}
+
+/* Section header row (icon + title + desc) */
+.pf-section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.pf-section-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.pf-section-icon--portfolio {
+    background: rgba(24, 33, 245, 0.1);
+    color: var(--color-primary);
+}
+
+.pf-section-icon--desain {
+    background: rgba(124, 58, 237, 0.1);
+    color: #7c3aed;
+}
+
+.pf-section-title {
+    font-size: var(--text-h3);
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin: 0 0 0.25rem;
+}
+
+.pf-section-desc {
+    font-size: var(--text-small);
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Empty state */
+.pf-empty {
+    text-align: center;
+    padding: 3rem 1rem;
+    border: 1.5px dashed var(--color-border);
+    border-radius: 16px;
+    background: var(--color-bg-alt);
+}
+
+.pf-empty--soft {
+    padding: 1.5rem 1rem;
+    background: none;
+    border-color: transparent;
+}
+
+.pf-empty-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--color-bg-secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--color-text-muted);
+}
+
+.pf-empty-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin: 0 0 0.35rem;
+}
+
+.pf-empty-sub {
+    font-size: var(--text-small);
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* Card type badge (overlay on image) */
+.pf-cat-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.28rem 0.65rem;
+    border-radius: 99px;
+    backdrop-filter: blur(6px);
+}
+
+.pf-cat-badge--portfolio {
+    background: rgba(24, 33, 245, 0.85);
+    color: #fff;
+}
+
+.pf-cat-badge--desain {
+    background: rgba(124, 58, 237, 0.85);
+    color: #fff;
+}
+
+/* Client label above title */
+.portfolio-client {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+@media (max-width: 768px) {
+    .pf-section--desain {
+        padding: 1.5rem;
+        border-radius: 14px;
+    }
+    .pf-section-header {
+        gap: 0.75rem;
+    }
+}
+
 /* Portfolio category badge (overlay on image) */
 .portfolio-category-badge {
     position: absolute;

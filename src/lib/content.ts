@@ -50,6 +50,7 @@ type CmsPortfolioRecord = {
   order?: number;
   featured?: boolean;
   title?: string;
+  type?: string;
   category?: string;
   client?: string;
   image?: { url: string; alt?: string } | null;
@@ -226,13 +227,14 @@ export async function getPricingPackages() {
 }
 
 function normalizePortfolioItem(record: CmsPortfolioRecord, index: number): PortfolioItem | null {
-  if (!record.title || !record.category || !record.image?.url) return null;
+  if (!record.title || !record.type || !record.category || !record.image?.url) return null;
   return {
     id: `cms-${index}`,
     order: record.order ?? index + 1,
     featured: Boolean(record.featured),
+    type: record.type as PortfolioItem['type'],
+    category: record.category,
     title: record.title,
-    category: record.category as PortfolioCategory,
     client: record.client,
     image: record.image.url,
     imageAlt: record.image.alt,
