@@ -60,7 +60,7 @@ export default function Header() {
             <Link href="/produk" className="nav-link">{t('Produk', 'Products')}</Link>
             <Link href="/pricing" className="nav-link">{t('Harga', 'Pricing')}</Link>
             <Link href="/artikel" className="nav-link">{t('Artikel', 'Articles')}</Link>
-            <Link href="/#faq" className="nav-link">FAQ</Link>
+            <Link href="/portfolio" className="nav-link">{t('Portofolio', 'Portfolio')}</Link>
             <Link href="/kontak" className="nav-link">{t('Kontak', 'Contact')}</Link>
           </nav>
           <div className="nav-right">
@@ -78,7 +78,7 @@ export default function Header() {
         <Link href="/produk" className="mobile-nav-link" onClick={closeMenu}>{t('Produk', 'Products')}</Link>
         <Link href="/pricing" className="mobile-nav-link" onClick={closeMenu}>{t('Harga', 'Pricing')}</Link>
         <Link href="/artikel" className="mobile-nav-link" onClick={closeMenu}>{t('Artikel', 'Articles')}</Link>
-        <Link href="/#faq" className="mobile-nav-link" onClick={closeMenu}>FAQ</Link>
+        <Link href="/portfolio" className="mobile-nav-link" onClick={closeMenu}>{t('Portofolio', 'Portfolio')}</Link>
         <Link href="/kontak" className="mobile-nav-link" onClick={closeMenu}>{t('Kontak', 'Contact')}</Link>
       </div>
     </>
